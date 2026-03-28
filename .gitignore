@@ -1,0 +1,29 @@
+# Node
+node_modules/
+.pnpm-store/
+
+# Build
+dist/
+coverage/
+
+# Env
+.env
+.env.local
+
+# Logs
+*.log
+_tmp_*.log
+
+# Indexer DB
+indexer/data/
+
+# Move
+contracts/frontier_bounty/build/
+contracts/frontier_bounty/.coverage_map.mvcov
+contracts/frontier_bounty/.trace/
+
+# OS
+.DS_Store
+Thumbs.db
+AGENTS.md
+docs/

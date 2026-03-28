@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  background: #060b12;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: theme('fontFamily.body');
+  color: #e7f3ff;
+  background:
+    radial-gradient(circle at top left, rgba(137, 216, 255, 0.14), transparent 28%),
+    radial-gradient(circle at top right, rgba(240, 181, 106, 0.08), transparent 24%),
+    linear-gradient(180deg, #08111a 0%, #060b12 52%, #04080e 100%);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(143, 168, 189, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(143, 168, 189, 0.05) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.8), transparent 85%);
+  opacity: 0.24;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.25) 100%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(15, 26, 37, 0.6);
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
+  background: rgba(137, 216, 255, 0.22);
+  border: 2px solid rgba(15, 26, 37, 0.8);
+}
+
+@layer components {
+  .panel {
+    @apply rounded-[28px] border border-line/70 bg-panel/85 bg-panel-sheen backdrop-blur-xl shadow-panel;
+  }
+
+  .panel-muted {
+    @apply rounded-3xl border border-line/50 bg-graphite/80 backdrop-blur-md;
+  }
+
+  .eyebrow {
+    @apply text-[11px] font-semibold uppercase tracking-[0.28em] text-frost/80;
+  }
+
+  .label-muted {
+    @apply text-xs uppercase tracking-[0.24em] text-muted/75;
+  }
+
+  .control-input {
+    @apply w-full rounded-2xl border border-line/80 bg-graphite/85 px-4 py-3 text-sm text-ink outline-none transition placeholder:text-muted/60 focus:border-frost/70 focus:ring-2 focus:ring-frost/15;
+  }
+
+  .control-textarea {
+    @apply control-input min-h-32 resize-y;
+  }
+
+  .button-primary {
+    @apply inline-flex items-center justify-center rounded-2xl border border-frost/40 bg-frost/15 px-4 py-2.5 text-sm font-semibold text-ice transition hover:border-frost/60 hover:bg-frost/20;
+  }
+
+  .button-secondary {
+    @apply inline-flex items-center justify-center rounded-2xl border border-line/80 bg-steel/70 px-4 py-2.5 text-sm font-semibold text-ink transition hover:border-frost/30 hover:bg-steel;
+  }
+
+  .button-danger {
+    @apply inline-flex items-center justify-center rounded-2xl border border-crimson/40 bg-crimson/10 px-4 py-2.5 text-sm font-semibold text-crimson transition hover:bg-crimson/15;
+  }
+}

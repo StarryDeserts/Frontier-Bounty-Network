@@ -1,0 +1,17 @@
+{
+  "name": "frontier-bounty-network",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev:frontend": "pnpm -C frontend dev",
+    "dev:indexer": "pnpm -C indexer dev",
+    "dev:indexer:mock": "pnpm -C indexer dev:mock",
+    "build:frontend": "pnpm -C frontend build",
+    "build:indexer": "pnpm -C indexer build",
+    "build": "pnpm build:indexer && pnpm build:frontend",
+    "typecheck": "pnpm -C indexer typecheck && pnpm -C frontend typecheck",
+    "test:contracts": "cd contracts/frontier_bounty && sui move test",
+    "seed:data": "node scripts/seed-data.mjs",
+    "test:flow": "node scripts/test-flow.mjs"
+  }
+}

@@ -1,0 +1,6 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { Link } from 'react-router-dom';
+import { StatusBadge } from '@/components/common/StatusBadge';
+export default function MyBounties({ bounties }) {
+    return (_jsxs("div", { className: "panel p-5", children: [_jsx("p", { className: "eyebrow", children: "Owned Contracts" }), _jsx("h2", { className: "mt-2 font-display text-xl text-ink", children: "Published by this wallet" }), _jsxs("ul", { className: "mt-5 space-y-3 text-sm", children: [bounties.map((bounty) => (_jsxs("li", { className: "flex flex-col gap-3 rounded-2xl border border-line/60 bg-steel/45 p-4 sm:flex-row sm:items-center sm:justify-between", children: [_jsxs("div", { children: [_jsx("p", { className: "font-mono text-xs text-ice", children: bounty.target }), _jsx("div", { className: "mt-2", children: _jsx(StatusBadge, { status: bounty.status }) })] }), _jsx(Link, { to: `/bounties/${bounty.id}`, className: "button-secondary text-xs", children: "Open" })] }, bounty.id))), bounties.length === 0 && (_jsx("li", { className: "rounded-2xl border border-dashed border-line/70 bg-graphite/65 p-4 text-muted", children: "No published bounty objects detected for this wallet." }))] })] }));
+}

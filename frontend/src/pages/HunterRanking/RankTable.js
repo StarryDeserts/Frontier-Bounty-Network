@@ -1,0 +1,6 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { AddressTag } from '@/components/common/AddressTag';
+import { CoinAmount } from '@/components/common/CoinAmount';
+export default function RankTable({ hunters }) {
+    return (_jsxs("div", { className: "panel overflow-x-auto p-4", children: [_jsx("p", { className: "eyebrow", children: "Rank Table" }), _jsxs("table", { className: "mt-4 min-w-full text-sm", children: [_jsx("thead", { children: _jsxs("tr", { className: "text-left text-muted", children: [_jsx("th", { className: "py-2 pr-3", children: "Rank" }), _jsx("th", { className: "py-2 pr-3", children: "Hunter" }), _jsx("th", { className: "py-2 pr-3", children: "Kills" }), _jsx("th", { className: "py-2", children: "Earnings" })] }) }), _jsx("tbody", { children: hunters.map((hunter) => (_jsxs("tr", { className: "border-t border-line/60", children: [_jsxs("td", { className: "py-3 pr-3 text-ice", children: ["#", hunter.rank] }), _jsx("td", { className: "py-3 pr-3", children: _jsx(AddressTag, { address: hunter.address }) }), _jsx("td", { className: "py-3 pr-3 text-ink", children: hunter.kills }), _jsx("td", { className: "py-3", children: _jsx(CoinAmount, { amount: hunter.totalEarnings }) })] }, hunter.address))) })] })] }));
+}
